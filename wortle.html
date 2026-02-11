@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WORTLE - German Word Game</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="wortle.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>WORTLE</h1>
+            <button class="login-btn" id="loginBtn" title="Login dengan Google">
+                <span class="login-text">Login</span>
+            </button>
+        </div>
+    </header>
+
+    <div class="game-container">
+    <!-- Game grid -->
+        <div class="grid-container" id="grid">
+            <!-- 6 rows with 5 cells each -->
+            <div class="grid-row">
+                <div class="grid-cell"></div>
+                <div class="grid-cell"></div>
+                <div class="grid-cell"></div>
+                <div class="grid-cell"></div>
+                <div class="grid-cell"></div>
+            </div>
+            <div class="grid-row">
+                <div class="grid-cell"></div>
+                <div class="grid-cell"></div>
+                <div class="grid-cell"></div>
+                <div class="grid-cell"></div>
+                <div class="grid-cell"></div>
+            </div>
+            <div class="grid-row">
+                <div class="grid-cell"></div>
+                <div class="grid-cell"></div>
+                <div class="grid-cell"></div>
+                <div class="grid-cell"></div>
+                <div class="grid-cell"></div>
+            </div>
+            <div class="grid-row">
+                <div class="grid-cell"></div>
+                <div class="grid-cell"></div>
+                <div class="grid-cell"></div>
+                <div class="grid-cell"></div>
+                <div class="grid-cell"></div>
+            </div>
+            <div class="grid-row">
+                <div class="grid-cell"></div>
+                <div class="grid-cell"></div>
+                <div class="grid-cell"></div>
+                <div class="grid-cell"></div>
+                <div class="grid-cell"></div>
+            </div>
+            <div class="grid-row">
+                <div class="grid-cell"></div>
+                <div class="grid-cell"></div>
+                <div class="grid-cell"></div>
+                <div class="grid-cell"></div>
+                <div class="grid-cell"></div>
+            </div>
+        </div>
+
+        <div class="grid-actions">
+            <div class="player-info" id="playerInfo"></div>
+            <button class="info-btn" id="leaderboardBtn" title="Leaderboard">
+                <img src="icon/icon-leaderboard.svg" alt="" aria-hidden="true">
+                <span class="visually-hidden">Leaderboard</span>
+            </button>
+            <button class="info-btn" id="infoBtn" title="Info">
+                <img src="icon/icon-info.svg" alt="" aria-hidden="true">
+                <span class="visually-hidden">Info</span>
+            </button>
+        </div>
+
+        <!-- Virtual keyboard -->
+        <div class="keyboard">
+            <div class="keyboard-row">
+                <button class="key">Q</button>
+                <button class="key">W</button>
+                <button class="key">E</button>
+                <button class="key">R</button>
+                <button class="key">T</button>
+                <button class="key">Z</button>
+                <button class="key">U</button>
+                <button class="key">I</button>
+                <button class="key">O</button>
+                <button class="key">P</button>
+                <button class="key">Ü</button>
+            </div>
+            <div class="keyboard-row">
+                <button class="key">A</button>
+                <button class="key">S</button>
+                <button class="key">D</button>
+                <button class="key">F</button>
+                <button class="key">G</button>
+                <button class="key">H</button>
+                <button class="key">J</button>
+                <button class="key">K</button>
+                <button class="key">L</button>
+                <button class="key">Ö</button>
+                <button class="key">Ä</button>
+            </div>
+            <div class="keyboard-row">
+                <button class="key wide">Enter</button>
+                <button class="key">Y</button>
+                <button class="key">X</button>
+                <button class="key">C</button>
+                <button class="key">V</button>
+                <button class="key">B</button>
+                <button class="key">N</button>
+                <button class="key">M</button>
+                <button class="key">ß</button>
+                <button class="key wide">⌫</button>
+            </div>
+        </div>
+    </div>
+
+    <script type="module">
+        import { WortleGame, initUIHandlers } from './scripts/wortle-game.js';
+        import { initLogin } from './scripts/login.js';
+        
+        document.addEventListener('DOMContentLoaded', () => {
+            try {
+                // Initialize game
+                const game = new WortleGame();
+                window.game = game;
+                console.log('Game initialized successfully');
+
+                // Initialize UI handlers
+                initUIHandlers();
+
+                // Initialize login
+                initLogin();
+            } catch (error) {
+                console.error('Failed to initialize game:', error);
+                document.getElementById('message').textContent = 'Terjadi kesalahan, coba refresh halaman';
+            }
+        });
+    </script>
+</body>
+</html>

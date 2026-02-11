@@ -1,0 +1,26 @@
+# Netlify Configuration
+
+[build]
+  # Directory to deploy
+  publish = "."
+  # Functions directory
+  functions = "netlify/functions"
+  # Build command (if any)
+  command = "echo 'Build complete'"
+
+# Environment variables can be set in Netlify dashboard
+# or in .env.production file
+
+# Redirect all requests to functions
+[[redirects]]
+  from = "/.netlify/functions/:name"
+  to = "/.netlify/functions/:name"
+  status = 200
+
+# CORS headers for API functions
+[[headers]]
+  for = "/.netlify/functions/*"
+  [headers.values]
+    Access-Control-Allow-Origin = "*"
+    Access-Control-Allow-Methods = "GET, POST, OPTIONS"
+    Access-Control-Allow-Headers = "Content-Type"

@@ -1,0 +1,17 @@
+{
+  "buildCommand": "echo 'Static build complete'",
+  "outputDirectory": ".",
+  "rewrites": [
+    {
+      "source": "/api/(.*)",
+      "destination": "/api/$1"
+    }
+  ],
+  "env": [
+    "DB_HOST",
+    "DB_USER",
+    "DB_PASS",
+    "DB_NAME",
+    "CORS_ORIGIN"
+  ]
+}

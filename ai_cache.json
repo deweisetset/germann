@@ -1,0 +1,394 @@
+{
+    "radio": {
+        "result": {
+            "german": "Ich höre gerne Radio.",
+            "translation": "Saya suka mendengarkan radio."
+        },
+        "created_at": 1764061784
+    },
+    "grund": {
+        "result": {
+            "german": "Der Grund ist wichtig.",
+            "translation": "Alasan itu penting."
+        },
+        "created_at": 1764061950
+    },
+    "schaf": {
+        "result": {
+            "german": "Das Schaf frisst Gras.",
+            "translation": "Domba makan rumput."
+        },
+        "created_at": 1764062085
+    },
+    "karte": {
+        "result": {
+            "german": "Ich habe meine Karte verloren.",
+            "translation": "Saya kehilangan kartu saya."
+        },
+        "created_at": 1764137390
+    },
+    "lange": {
+        "result": {
+            "german": "Die Schlange ist sehr lang.",
+            "translation": "Ular itu sangat panjang."
+        },
+        "created_at": 1764137656
+    },
+    "krieg": {
+        "result": {
+            "german": "Der Krieg ist grausam.",
+            "translation": "Perang itu kejam."
+        },
+        "created_at": 1764137832
+    },
+    "regen": {
+        "result": {
+            "german": "Es regnet draußen.",
+            "translation": "Sedang hujan di luar."
+        },
+        "created_at": 1764138687
+    },
+    "fülle": {
+        "result": {
+            "german": "Die Fülle des Lebens genießen.",
+            "translation": "Menikmati keberlimpahan kehidupan."
+        },
+        "created_at": 1764138973
+    },
+    "elend": {
+        "result": {
+            "german": "Das ist ein elendes Wetter.",
+            "translation": "Ini adalah cuaca yang buruk."
+        },
+        "created_at": 1764139355
+    },
+    "angst": {
+        "result": {
+            "german": "Ich habe Angst vor Spinnen.",
+            "translation": "Aku takut laba-laba."
+        },
+        "created_at": 1764139549
+    },
+    "farbe": {
+        "result": {
+            "german": "Die Farbe des Himmels ist blau.",
+            "translation": "Warna langit itu biru."
+        },
+        "created_at": 1764492879
+    },
+    "hilfe": {
+        "result": {
+            "german": "Ich brauche deine Hilfe.",
+            "translation": "Aku butuh bantuanmu."
+        },
+        "created_at": 1764656552
+    },
+    "zuker": {
+        "result": {
+            "german": "Ich mag ZUKER in meinem Kaffee.",
+            "translation": "Aku suka gula dalam kopiku."
+        },
+        "created_at": 1764656687
+    },
+    "apfel": {
+        "result": {
+            "german": "Der Apfel ist rot.",
+            "translation": "Apel itu merah."
+        },
+        "created_at": 1764657107
+    },
+    "ernst": {
+        "result": {
+            "german": "Nimm das nicht so ernst.",
+            "translation": "Jangan ambil itu terlalu serius."
+        },
+        "created_at": 1764657187
+    },
+    "arena": {
+        "result": {
+            "german": "Die Konzerte finden in der Arena statt.",
+            "translation": "Konser-konser berlangsung di arena."
+        },
+        "created_at": 1764657266
+    },
+    "pumpe": {
+        "result": {
+            "german": "Die Pumpe ist kaputt.",
+            "translation": "Pompa rusak."
+        },
+        "created_at": 1764657379
+    },
+    "leute": {
+        "result": {
+            "german": "Viele Leute sind heute im Park.",
+            "translation": "Banyak orang berada di taman hari ini."
+        },
+        "created_at": 1764665006
+    },
+    "nacht": {
+        "result": {
+            "german": "Gute Nacht!",
+            "translation": "Selamat malam!"
+        },
+        "created_at": 1764746973
+    },
+    "legen": {
+        "result": {
+            "german": "Die Legende besagt, dass der Drache den Schatz bewacht.",
+            "translation": "Legenda mengatakan bahwa naga menjaga harta karun."
+        },
+        "created_at": 1765360274
+    },
+    "spion": {
+        "result": {
+            "german": "Der Spion beobachtet alles.",
+            "translation": "Mata-mata mengamati segala sesuatu."
+        },
+        "created_at": 1765360456
+    },
+    "zange": {
+        "result": {
+            "german": "Benutze die Zange, um den Draht zu biegen.",
+            "translation": "Gunakan tang untuk membengkokkan kawat."
+        },
+        "created_at": 1765360521
+    },
+    "blind": {
+        "result": {
+            "german": "Der blinde Mann liest ein Buch.",
+            "translation": "Pria buta sedang membaca buku."
+        },
+        "created_at": 1765706063
+    },
+    "lippe": {
+        "result": {
+            "german": "Ich trinke gerne Lippe.",
+            "translation": "Saya suka minum Lippe."
+        },
+        "created_at": 1765709037
+    },
+    "erden": {
+        "result": {
+            "german": "Der Regen fällt auf die Erden.",
+            "translation": "Hujan turun ke bumi."
+        },
+        "created_at": 1765786451
+    },
+    "kante": {
+        "result": {
+            "german": "Die Kante des Tisches ist scharf.",
+            "translation": "Tepi meja itu tajam."
+        },
+        "created_at": 1766686244
+    },
+    "erben": {
+        "result": {
+            "german": "Sie wird das Erbe ihres Großvaters erhalten.",
+            "translation": "Dia akan menerima warisan dari kakeknya."
+        },
+        "created_at": 1766914514
+    },
+    "salat": {
+        "result": {
+            "german": "Ich esse gerne Salat zum Abendessen.",
+            "translation": "Saya suka makan salad untuk makan malam."
+        },
+        "created_at": 1766917819
+    },
+    "echse": {
+        "result": {
+            "german": "Die Echse klettert auf den Baum.",
+            "translation": "Kadal itu memanjat pohon."
+        },
+        "created_at": 1766998896
+    },
+    "euter": {
+        "result": {
+            "german": "Die Kuh hat vier Euter.",
+            "translation": "Sapi memiliki empat puting susu."
+        },
+        "created_at": 1767510429
+    },
+    "leibe": {
+        "result": {
+            "german": "Ich liebe dich.",
+            "translation": "Aku mencintaimu."
+        },
+        "created_at": 1768386265
+    },
+    "leben": {
+        "result": {
+            "german": "Das Leben ist schön.",
+            "translation": "Hidup itu indah."
+        },
+        "created_at": 1768386323
+    },
+    "lehne": {
+        "result": {
+            "german": "Ich lehne deine Vorschläge ab.",
+            "translation": "Saya menolak usulanmu."
+        },
+        "created_at": 1768387100
+    },
+    "drone": {
+        "result": {
+            "german": "Die Drohne fliegt über dem Gebäude.",
+            "translation": "Drone terbang di atas bangunan."
+        },
+        "created_at": 1768387212
+    },
+    "leise": {
+        "result": {
+            "german": "Bitte sei leise.",
+            "translation": "Tolong diam."
+        },
+        "created_at": 1768388376
+    },
+    "druse": {
+        "result": {
+            "german": "Die Druse ist eine geologische Formation.",
+            "translation": "Druse adalah formasi geologi."
+        },
+        "created_at": 1768452144
+    },
+    "fuchs": {
+        "result": {
+            "german": "Der Fuchs jagt die Maus.",
+            "translation": "Rubah mengejar tikus."
+        },
+        "created_at": 1768452483
+    },
+    "bauer": {
+        "result": {
+            "german": "Der Bauer arbeitet auf dem Feld.",
+            "translation": "Petani bekerja di sawah."
+        },
+        "created_at": 1768452613
+    },
+    "bohne": {
+        "result": {
+            "german": "Die Bohne ist grün.",
+            "translation": "Kacang itu hijau."
+        },
+        "created_at": 1768452723
+    },
+    "alter": {
+        "result": {
+            "german": "Er ist im gleichen Alter wie ich.",
+            "translation": "Dia sebaya denganku."
+        },
+        "created_at": 1768452787
+    },
+    "fluss": {
+        "result": {
+            "german": "Der Fluss fließt durch die Stadt.",
+            "translation": "Sungai mengalir melalui kota."
+        },
+        "created_at": 1768455363
+    },
+    "trist": {
+        "result": {
+            "german": "Er ist traurig.",
+            "translation": "Dia sedih."
+        },
+        "created_at": 1768789564
+    },
+    "decke": {
+        "result": {
+            "german": "Ich habe die Decke gekauft.",
+            "translation": "Aku telah membeli selimut."
+        },
+        "created_at": 1768789599
+    },
+    "stopp": {
+        "result": {
+            "german": "Ich stoppe das Auto.",
+            "translation": "Aku menghentikan mobil."
+        },
+        "created_at": 1768789876
+    },
+    "pokal": {
+        "result": {
+            "german": "Ich habe den Pokal gewonnen.",
+            "translation": "Aku telah memenangkan piala."
+        },
+        "created_at": 1768789940
+    },
+    "rosen": {
+        "result": {
+            "german": "Ich habe dir Rosen geschenkt.",
+            "translation": "Aku telah memberimu bunga mawar."
+        },
+        "created_at": 1768790038
+    },
+    "helle": {
+        "result": {
+            "german": "Ich habe die helle Lampe eingeschaltet.",
+            "translation": "Aku telah menyalakan lampu terang."
+        },
+        "created_at": 1768790829
+    },
+    "einig": {
+        "result": {
+            "german": "Wir sind uns einig.",
+            "translation": "Kita setuju."
+        },
+        "created_at": 1768791436
+    },
+    "rally": {
+        "result": {
+            "german": "Ich habe an der Rally teilgenommen.",
+            "translation": "Aku telah ikut dalam rally."
+        },
+        "created_at": 1768791989
+    },
+    "bruch": {
+        "result": {
+            "german": "Ich habe einen Bruch gemacht.",
+            "translation": "Aku telah membuat kesalahan."
+        },
+        "created_at": 1768793603
+    },
+    "eisen": {
+        "result": {
+            "german": "Ich habe das Eisen geschmiedet.",
+            "translation": "Aku telah menempa besi."
+        },
+        "created_at": 1769500372
+    },
+    "dohle": {
+        "result": {
+            "german": "Die Dohle hat gefressen.",
+            "translation": "Dohle telah makan."
+        },
+        "created_at": 1769500451
+    },
+    "sushi": {
+        "result": {
+            "german": "Ich esse gerne Sushi.",
+            "translation": "Saya suka makan sushi."
+        },
+        "created_at": 1769500699
+    },
+    "tisch": {
+        "result": {
+            "german": "Ich habe den Tisch gedeckt.",
+            "translation": "Aku telah menyusun meja."
+        },
+        "created_at": 1769596662
+    },
+    "fahne": {
+        "result": {
+            "german": "Ich habe die Fahne gehisst.",
+            "translation": "Aku telah mengibarkan bendera."
+        },
+        "created_at": 1769596907
+    },
+    "braun": {
+        "result": {
+            "german": "Ich habe braune Haare.",
+            "translation": "Aku memiliki rambut cokelat."
+        },
+        "created_at": 1769597049
+    }
+}

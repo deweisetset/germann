@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <title>CROSSWORD - German Word Game</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Lora&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="crossword.css">
+  <script src="header-scroll.js" defer></script>
+</head>
+<body>
+  <header>
+    <h1><a href="index.html" style="color: inherit; text-decoration: none;">WORTLE</a></h1>
+  </header>
+  <main id="game-root">
+    <div class="game-container">
+      <div class="crossword-wrapper">
+        <!-- Crossword Grid -->
+        <div class="crossword-area" style="position: relative; display: inline-block;">
+          <div class="crossword-grid" id="crosswordGrid">
+            <!-- Grid akan diisi oleh JavaScript -->
+          </div>
+          <!-- SVG overlay for selection lines -->
+          <svg class="grid-overlay" id="gridOverlay" viewBox="0 0 100 100" preserveAspectRatio="none"></svg>
+        </div>
+      </div>
+
+      <!-- Game Controls -->
+      <div class="game-controls">
+        <!-- Urutan tombol: Kembali - Reset - Info - Hint - Menyerah -->
+        <a href="index.html" class="btn btn-secondary">Kembali</a>
+        <button id="resetBtn" class="btn btn-secondary">Reset</button>
+        <button id="infoBtn" class="btn btn-secondary">Info</button>
+        <button id="hintBtn" class="btn btn-secondary">Hint</button>
+        <button id="giveUpBtn" class="btn btn-danger">Menyerah</button>
+      </div>
+
+      <!-- Word list (hidden until found) -->
+      <!-- CARA MENYESUAIKAN:
+           - max-width: ubah nilai (contoh: 1200px, 1000px) untuk perlebar/persempit kontainer
+           - gap: ubah nilai (contoh: 4rem, 2rem, 6rem) untuk jarak antar kolom (lebih besar = lebih jauh)
+           - justify-content: ubah ke "center" jika mau di tengah, atau "space-between" untuk kiri-kanan
+           - margin-left: ubah nilai (contoh: 0, 100px, 150px) untuk geser ke kanan (lebih besar = lebih ke kanan)
+           - flex:1: buat kolom lebar sama; ubah ke angka lain jika mau proporsi berbeda
+      -->
+      <div class="word-list" style="max-width:none;margin:0rem 0;display:flex;gap:6rem;justify-content:flex-start;margin-left:150px;">
+        <div style="flex:1;">
+          <div style="font-weight:700;margin-bottom:0.5rem;text-align:center;"></div>
+          <ol id="wordsColumn1" style="list-style:none;padding-left:0;"></ol>
+        </div>
+        <div style="flex:1;">
+          <div style="font-weight:700;margin-bottom:0.5rem;text-align:center;"></div>
+          <ol id="wordsColumn2" style="list-style:none;padding-left:0;"></ol>
+        </div>
+      </div>
+
+      
+
+      <!-- End Game Dialog -->
+      <!-- General message modal (black box, white text) -->
+      <!--
+        EDIT NOTES:
+        - Modal container: #messageModal
+          * To change overlay behavior (click outside to close), edit JS in `scripts/crossword-game.js` where event listener is attached.
+        - Modal box: .modal-box
+          * To change background color / padding / size, edit `.modal-box` in `crossword.css`.
+        - Close button: .modal-close
+          * Change symbol/text or accessibility label here.
+        - Title area: .modal-title  (innerText set from JS `showModal`)
+        - Content area: .modal-content  (HTML set from JS `showModal`)
+        - Actions area: .modal-actions  (buttons are added dynamically by JS)
+
+        Quick edits you can do directly here:
+        - Replace the close symbol `✕` with another character or an <svg> icon.
+        - Add static content inside `.modal-content` if you prefer not to use the JS writer.
+      -->
+      <div id="messageModal" class="modal-overlay" style="display:none;">
+        <div class="modal-box">
+          <!-- edit the X button text/label here if you want a different close icon -->
+          <button class="modal-close" aria-label="Tutup">✕</button>
+          <!-- Title is set by JS: see `showModal(title, bodyHtml, showPlayAgain, center)` -->
+          <h3 class="modal-title"></h3>
+          <!-- Content is set by JS. If you want static content, place it here instead of relying on JS. -->
+          <div class="modal-content"></div>
+          <!-- Actions (Tutup / Main Lagi) are inserted by JS. To change button text or order, edit `showModal` in `scripts/crossword-game.js`. -->
+          <div class="modal-actions" style="margin-top:1rem;display:flex;gap:0.5rem;justify-content:flex-end;"></div>
+        </div>
+      </div>
+
+      <div id="endGameOverlay" class="overlay" style="display: none;">
+        <div class="end-dialog">
+          <h3 id="endGameTitle">Selesai!</h3>
+          <p id="endGameMessage"></p>
+          <button id="playAgainBtn" class="btn btn-primary">Main Lagi</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script type="module">
+    import { CrosswordGame } from './scripts/crossword-game.js';
+    
+    const game = new CrosswordGame();
+    game.initializeGame();
+  </script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+{
+  "name": "wortle",
+  "version": "1.0.0",
+  "description": "German word game like Wordle",
+  "main": "index.html",
+  "scripts": {
+    "dev": "netlify dev",
+    "build": "echo 'Build complete'"
+  },
+  "keywords": ["game", "german", "wordle"],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "mysql2": "^3.6.0",
+    "node-fetch": "^2.6.11"
+  },
+  "devDependencies": {
+    "netlify-cli": "^17.0.0"
+  }
+}

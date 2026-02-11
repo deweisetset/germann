@@ -1,0 +1,34 @@
+-- SQL to create 'wortle' database and tables for users and scores
+SET FOREIGN_KEY_CHECKS=0;
+
+CREATE DATABASE IF NOT EXISTS `wortle` CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+USE `wortle`;
+
+DROP TABLE IF EXISTS `scores`;
+DROP TABLE IF EXISTS `users`;
+
+CREATE TABLE `users` (
+  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  `google_id` VARCHAR(255) NOT NULL UNIQUE,
+  `email` VARCHAR(255) DEFAULT NULL,
+  `name` VARCHAR(255) DEFAULT NULL,
+  `picture` VARCHAR(512) DEFAULT NULL,
+  `display_name` VARCHAR(50) DEFAULT NULL,
+  `total_score` INT UNSIGNED DEFAULT 0,
+  `created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  INDEX `idx_google_id` (`google_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+CREATE TABLE `scores` (
+  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  `user_id` INT UNSIGNED NOT NULL,
+  `word` VARCHAR(16) DEFAULT NULL,
+  `attempts` TINYINT UNSIGNED DEFAULT NULL,
+  `result` ENUM('win','loss') DEFAULT NULL,
+  `points` INT DEFAULT 0,
+  `created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  INDEX `idx_user_id` (`user_id`),
+  CONSTRAINT `fk_scores_user_id` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+SET FOREIGN_KEY_CHECKS=1;

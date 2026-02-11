@@ -1,0 +1,436 @@
+:root {
+    --correct-color: #43A047;
+    --present-color: #F4D35E;
+    --absent-color: #787c7e;
+    --key-bg: #E8E8EA;
+    --border-color: #E8E8EA;
+    /* Width of the end-game dialog. Change this value to make the dialog wider/narrower.
+       Example: --dialog-width: 420px; */
+    --dialog-width: 360px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+     font-family: 'Arial', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #1E1E20;
+    min-height: 100vh;
+}
+
+header {
+    width: 100%;
+    font-family: 'Arial', sans-serif;
+    background: #1A1A1A;
+    color: white;
+    padding: 1rem;
+    margin-bottom: 2rem;
+}
+
+.header-content {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.header-content h1 {
+    margin: 0;
+    text-align: center;
+}
+
+.login-btn {
+    position: absolute;
+    right: 0;
+    background: #00000075; 
+    border: none;
+    padding: 0.5rem 1rem;
+    font-size: 0.75rem;   
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 700;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: transform 0.2s, box-shadow 0.2s, background 0.2s, color 0.2s;
+    white-space: nowrap;
+}
+
+.login-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(96, 90, 90, 0.3);
+}
+
+.login-btn.logged-in {
+    background: none;
+    color: white;
+    padding: 0;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: underline;
+}
+
+.login-btn.logged-in:hover {
+    transform: none;
+    box-shadow: none;
+    opacity: 0.8;
+}
+
+.profile-info {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+}
+
+.profile-info img {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.profile-name {
+    font-size: 0.9rem;
+    max-width: 120px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    max-width: 500px;
+    width: 100%;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-rows: repeat(6, 1fr);
+    gap: 5px;
+    margin-bottom: 2rem;
+}
+
+/* Actions row below grid (info button aligned right) */
+.grid-actions {
+    width: 100%;
+    max-width: 300px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: -2rem;
+    gap: 12px;
+    margin-right: auto; 
+    margin-left: auto;/* geser 20px ke kiri */
+
+}
+
+.player-info {
+    font-size: 12px;
+    color: #ffffff;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    min-width: 80px;
+    margin-right: auto;
+    display: none;
+    text-align: left;
+}
+
+.info-btn {
+    width: 20px;
+    height: 20px;
+    background: var(--key-bg);
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.info-btn img {
+    width: 16px;
+    height: 16px;
+    display: block;
+}
+
+
+
+/* Accessibility helper for screen-reader-only text */
+.visually-hidden {
+    position: absolute !important;
+    width: 1px; height: 1px;
+    padding: 0; margin: -1px;
+    overflow: hidden; clip: rect(0 0 0 0);
+    white-space: nowrap; border: 0;
+}
+
+.grid-row {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 5px;
+}
+
+.grid-cell {
+    width: 56px;
+    height: 56px;
+    border: 2px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6rem;
+    font-weight: bold;
+    /* text-transform removed so 'ß' glyph is not converted to 'SS' by CSS.
+       JS will upper-case letters when needed and preserve ß. */
+    background: #35353A;
+    color: #FFFFFF;    /* <-- tambahkan baris ini */
+    transition: transform 0.15s;
+}
+
+/* Animations */
+@keyframes pop {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+}
+
+@keyframes flip {
+    0% { transform: rotateX(0); }
+    50% { transform: rotateX(90deg); }
+    100% { transform: rotateX(0); }
+}
+
+.pop {
+    animation: pop 0.1s ease-in-out;
+}
+
+.shake {
+    animation: shake 0.5s ease-in-out;
+}
+
+.flip {
+    animation: flip 0.5s ease-in-out;
+}
+
+.keyboard {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+    max-width: 500px;
+}
+
+.keyboard-row {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+}
+
+.key {
+    background: var(--key-bg);
+    border: none;
+    border-radius: 4px;
+    padding: 1rem;
+    font-size: 0.9rem;
+    font-weight: bold;
+    cursor: pointer;
+    /* text-transform: uppercase removed to preserve ß character display.
+       JS will handle uppercasing for regular letters. */
+    min-width: 2.6rem;
+    /* use Lora for keyboard letters and center text inside key */
+     font-family: 'Arial', sans-serif;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1; /* keep consistent centering */
+}
+
+.key:hover {
+    opacity: 0.9;
+}
+
+.key.wide {
+    /* Wider keys (Enter, Backspace). Use flex-basis so they don't shrink.
+       Change the '6rem' value to make them wider if needed. */
+    flex: 0 0 4.2rem;
+    min-width: 4.2rem;
+    padding-left: 0.6rem;
+    padding-right: 0.6rem;
+    box-sizing: border-box;
+}
+
+/* inline message area removed (no on-page message box) */
+
+/* End-game dialog (overlay) */
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.45);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+.end-dialog {
+    /* End-game dialog box. Use the --dialog-width variable at the top of this file
+       to change the width globally. The dialog is responsive: the media query below
+       will reduce sizes on small screens automatically. */
+    background: #1A1A1A;
+    color: #fff;
+    padding: 1.5rem;
+    width: var(--dialog-width);
+    max-width: calc(100% - 40px);
+    border-radius: 12px;
+    text-align: left;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.4);
+}
+
+.end-dialog h2 {
+    margin: 0 0 0.5rem;
+    font-size: 1.05rem;
+    letter-spacing: 0.6px;
+}
+
+.end-dialog p {
+    margin: 0.5rem 0 1rem;
+    color: #ddd;
+    font-size: 0.95rem;
+}
+
+.ai-example {
+    margin: 1rem 0;
+    padding: 1rem;
+    background: #2A2A2E;
+    border-radius: 8px;
+    border-left: 4px solid #ffffff;
+    text-align: left;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: #ddd;
+}
+
+.ai-example strong {
+    color: #ffffff;
+    display: block;
+    margin-bottom: 0.3rem;
+    font-size: 0.85rem;
+}
+
+.btn-play-again {
+    display: inline-block;
+    background: #ffffff;
+    color: #1A1A1A;
+    padding: 0.6rem 1rem;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+.correct {
+    background: var(--correct-color) !important;
+    color: white;
+    border-color: var(--correct-color);
+}
+
+.present {
+    background: var(--present-color) !important;
+    color: white;
+    border-color: var(--present-color);
+}
+
+.absent {
+    background: var(--absent-color) !important;
+    color: white;
+    border-color: var(--absent-color);
+}
+
+/* Leaderboard styles */
+.leaderboard-dialog {
+    background: #000000;
+    border-radius: 12px;
+    padding: 2rem;
+    max-width: 360px;
+    width: 100%;
+    max-height: 600px;
+    overflow-y: auto;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+.leaderboard-title {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #ffffff;
+    font-size: 24px;
+}
+
+.leaderboard-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1.5rem;
+}
+
+.leaderboard-table thead {
+    background: #6d6d6d;
+}
+
+.leaderboard-table th {
+    padding: 0.75rem;
+    text-align: left;
+    font-weight: 600;
+    color: #333;
+    border-bottom: 2px solid #e0e0e0;
+    font-size: 13px;
+    text-transform: uppercase;
+}
+
+.leaderboard-table td {
+    padding: 0.75rem;
+    border-bottom: 1px solid #f0f0f0;
+    color: #555;
+    font-size: 14px;
+}
+
+.leaderboard-table tbody tr:hover {
+    background: #fafafa;
+}
+
+.rank-cell {
+    font-weight: 600;
+    color: #333;
+    width: 50px;
+}
+
+.name-cell {
+    font-weight: 500;
+    color: #333;
+    flex: 1;
+}
+
+.score-cell {
+    text-align: right;
+    font-weight: 600;
+    color: #43A047;
+    width: 80px;
+}
+
