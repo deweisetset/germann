@@ -1,0 +1,8 @@
+# OPENAI API KEY (development fallback)
+# Replace the line below with your OpenAI secret key (do NOT share it).
+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
+
+# Notes:
+# - This file is read by `openai_example.php` as a fallback (path: __DIR__ . '/../openai_key.txt').
+# - After replacing the placeholder with your key, restart Apache (XAMPP Control Panel) so PHP can read it.
+# - Do NOT commit this file to any repository. Add to .gitignore if needed.
